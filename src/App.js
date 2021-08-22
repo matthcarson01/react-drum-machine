@@ -1,26 +1,65 @@
-
+import DrumPad from './components/DrumPad';
 import './App.css';
 
-function App() {
+
+
+const App = () => {
+
+  const playAudio = () => {
+    const audioEl = document.getElementsByClassName("audio-element")[0];
+    audioEl.play();
+  }
+
   return (
     <main>
       <header>
-        <h1></h1>
+        <h1>Drum Machine</h1>
       </header>
       <section id="drum-machine">
         <div id="display"></div>
-        <div id="Q" class="drum-pad">Q</div>
-        <div id="W" class="drum-pad">W</div>
-        <div id="E" class="drum-pad">E</div>
-        <div id="A" class="drum-pad">A</div>
-        <div id="S" class="drum-pad">S</div>
-        <div id="D" class="drum-pad">D</div>
-        <div id="Z" class="drum-pad">Z</div>
-        <div id="X" class="drum-pad">X</div>
-        <div id="C" class="drum-pad">C</div>
+        {padSounds.map(pad => <DrumPad letter={pad.ltr} sound={pad.snd} />)}
       </section>
     </main>
   );
 }
+
+const padSounds = [
+  {
+    ltr: 'Q',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'W',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'E',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'A',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'S',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'D',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'Z',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'X',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  },
+  {
+    ltr: 'C',
+    snd: "https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"
+  }
+]
 
 export default App;

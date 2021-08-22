@@ -9,7 +9,8 @@ main {
   margin: auto;
 }
 header > h1 {
-
+ text-align: center;
+ color:#fff;
 }
 #drum-machine {
 
