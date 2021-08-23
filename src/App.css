@@ -37,6 +37,7 @@ header > h1 {
   align-items: center;
   cursor: pointer;
 }
+
 .drum-pad:active {
   box-shadow: 0 5px #60affa;
   transform: translateY(4px);

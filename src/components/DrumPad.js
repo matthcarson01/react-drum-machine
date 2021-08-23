@@ -1,16 +1,20 @@
+import { useContext } from 'react';
+import PadContext from '../pad-context';
 
-const DrumPad = ({ letter, sound }) => {
 
+const DrumPad = ({ letter, sound, message }) => {
+
+    const pad = useContext(PadContext);
     const playAudio = () => {
-        const audioEl = document.getElementsByClassName(`audio-element-${letter}`)[0];
-        audioEl.play();
+        const clip = document.getElementById(letter);
+        clip.play();
+        pad.pressPad(message);
+
     }
 
     return (
-        <div id={letter} className="drum-pad" onClick={playAudio}>
-            <audio className={`audio-element-${letter}`}>
-                <source src={sound}></source>
-            </audio>
+        <div className="drum-pad" onClick={playAudio}>
+            <audio id={letter} className="clip" src={sound} />
             {letter}
         </div>
     );
