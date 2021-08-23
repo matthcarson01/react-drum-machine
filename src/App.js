@@ -18,7 +18,9 @@ const App = () => {
           <h1>Drum Machine</h1>
         </header>
         <section id="drum-machine">
-          <div id="display">{pad}</div>
+          <div id="display">
+            <h2>{pad}</h2>
+          </div>
           {padSounds.map(pad => <DrumPad key={pad.ltr} letter={pad.ltr} sound={pad.snd} message={pad.msg} />)}
         </section>
       </main>
